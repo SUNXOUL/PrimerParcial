@@ -124,6 +124,43 @@
         }
       },
       {
+        "HashCode": -1221602533,
+        "Kind": "Components.Component",
+        "Name": "_1er_Parcial.Pages.Resgistro.R_Libro",
+        "AssemblyName": "1er Parcial",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "R_Libro"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "_1er_Parcial.Pages.Resgistro.R_Libro",
+          "Common.TypeNamespace": "_1er_Parcial.Pages.Resgistro",
+          "Common.TypeNameIdentifier": "R_Libro"
+        }
+      },
+      {
+        "HashCode": 781953073,
+        "Kind": "Components.Component",
+        "Name": "_1er_Parcial.Pages.Resgistro.R_Libro",
+        "AssemblyName": "1er Parcial",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "_1er_Parcial.Pages.Resgistro.R_Libro"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "_1er_Parcial.Pages.Resgistro.R_Libro",
+          "Common.TypeNamespace": "_1er_Parcial.Pages.Resgistro",
+          "Common.TypeNameIdentifier": "R_Libro",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
         "HashCode": 1961473069,
         "Kind": "Components.Component",
         "Name": "_1er_Parcial.App",
@@ -18994,6 +19031,11 @@
   },
   "RootNamespace": "_1er_Parcial",
   "Documents": [
+    {
+      "FilePath": "c:\\Users\\SUNXOUL\\Documents\\Clases\\Aplicada 1\\1er Parcial\\Pages\\Resgistro\\R_Libro.razor",
+      "TargetPath": "Pages\\Resgistro\\R_Libro.razor",
+      "FileKind": "component"
+    },
     {
       "FilePath": "c:\\Users\\SUNXOUL\\Documents\\Clases\\Aplicada 1\\1er Parcial\\Pages\\_Host.cshtml",
       "TargetPath": "Pages\\_Host.cshtml",
