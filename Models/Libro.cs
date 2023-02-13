@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-class Libro
+public class Libro
 {
     [Key]
     public int LibroId {get;set;}

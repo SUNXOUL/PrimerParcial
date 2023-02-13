@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 
-class Contexto : DbContext
+public class Contexto : DbContext
 {
     public Contexto(DbContextOptions<Contexto> Options) : base(Options){}
 
