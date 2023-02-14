@@ -1,13 +1,13 @@
 /* _content/1er Parcial/Shared/MainLayout.razor.rz.scp.css */
 .page[b-f2hr5m4gvc] {
-    position: relative;
+    justify-content: center;
     display: flex;
-    flex-direction: column;
+    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+    width: 100vw;
+    height: 100vh;
 }
 
-main[b-f2hr5m4gvc] {
-    flex: 1;
-}
+
 
 .sidebar[b-f2hr5m4gvc] {
     background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);

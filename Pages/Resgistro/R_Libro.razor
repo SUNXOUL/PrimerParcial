@@ -1,12 +1,47 @@
 ﻿@page "/"
 
 
-<h3>Registro de Libros</h3>
+@inject LibrosBLL books
+
+
 
 <head>
     <style>
         .Card div{
             padding: 10px;
+        }
+        .Entrada input
+        {
+            background-color:  rgb(255, 255, 255);
+            border-radius: 15px;
+            border: none;
+            text-align: center;
+        }
+        .Entrada{
+            width: 100%;
+        }
+        .Card{
+            border-radius: 15px;
+            background-color: rgb(180, 180, 180);
+            padding: 5%;
+            display: inline-block;
+        }
+        .CHead{
+            background-color: rgb(224, 217, 217);
+            border-radius: 15px;
+            text-align: center;
+        }
+        .CFooter {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            background-color: rgb(207, 207, 207);
+            border-radius: 15px;
+        }
+        body
+        {
+            display: flex;
+            justify-content: center;
         }
     </style>
 </head>
@@ -16,31 +51,33 @@
 
     <div class="Card">
         <div class="CHead">
-            
+            <h3>Registro de Libros</h3>
         </div>
         <div class="CBody">
             <div class="Entrada">
             <label for="LibroId">LibroID</label>
-            <input type="number" id="LibroId">
-            <Button class="btn" style="background-color: rgb(0, 225, 255);">Buscar</Button>
+                <div style="display: flex;">
+                <input type="number" @bind="libro.LibroId" id="LibroId">
+                <Button class="btn" @onclick="Buscar" style="background-color: rgb(0, 225, 255);">Buscar</Button>
+                </div>
             </div>
 
             <div class="Entrada">
             <label for="Titulo">Titulo</label>
-            <input type="text" id="Titulo">
+            <input type="text" @bind="libro.Titulo" id="Titulo">
             </div>
 
-            <div class="Precio">
+            <div class="Entrada">
             <label for="Precio">Precio</label>
-            <input type="number" id="Precio">
+            <input type="number" @bind="libro.Precio" id="Precio">
             </div>
 
 
         </div>
         <div class="CFooter">
-            <Button class="btn" style="background-color: rgb(0, 132, 255);">Nuevo</Button>
-            <Button class="btn" style="background-color: rgb(38, 194, 57);">Guardar</Button>
-            <Button class="btn" style="background-color: rgb(255, 54, 54);">Eliminar</Button> 
+            <Button class="btn" @onclick="Nuevo" style="background-color: rgb(0, 132, 255);">Nuevo</Button>
+            <Button class="btn" @onclick="Guardar" style="background-color: rgb(38, 194, 57);">Guardar</Button>
+            <Button class="btn" @onclick="Eliminar" style="background-color: rgb(255, 54, 54);">Eliminar</Button> 
 
         </div>
 
@@ -50,4 +87,56 @@
 
 @code {
 
+    public int LibroId {get;set;}
+    public Libro libro {get;set;} = new Libro();
+    public Libro? LibroEncontrado{get;set;}
+
+        protected override void OnInitialized()
+        {
+            
+        }
+
+        public bool Validar(){
+            if(libro.Titulo!=null && libro.Precio!= null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public void Guardar()
+        {
+            if(Validar())
+            {
+                books.Guardar(this.libro);
+            }
+            Nuevo();
+        }
+
+        public void Nuevo()
+        {
+            this.libro=new Libro();
+        }
+
+        public void Buscar()
+        {
+            LibroEncontrado=books.Buscar(libro.LibroId);
+            if(LibroEncontrado != null)
+            {
+                libro = LibroEncontrado;
+            }
+        }
+        
+        public void Eliminar()
+        {
+            Buscar();
+            books.Eliminar(this.libro);
+            Nuevo();
+        }
+
 }
+
+

@@ -49,7 +49,7 @@ public class LibrosBLL
         Context.Entry(libro).State =EntityState.Deleted;
         int cambios =Context.SaveChanges();
         Context.Entry(libro).State =EntityState.Detached;
-        Context.Database.ExecuteSql($"DELETE FROM Libros WHERE Libro.LibroId == {libro.LibroId}");
+        Context.Database.ExecuteSql($"DELETE FROM Libros WHERE LibroId == {libro.LibroId}");
         return cambios>0;
     }
 }
